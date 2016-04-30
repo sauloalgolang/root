@@ -1,0 +1,14 @@
+set -xeu
+
+DST=/go
+
+mkdir bin || true
+mkdir pkg || true
+
+DOCKER_CMD="docker run -it --rm \
+-v ${PWD}:${DST}/src            \
+-v ${PWD}/bin:${DST}/bin        \
+-v ${PWD}/pkg:${DST}/pkg        \
+-w ${DST}                       \
+golang:1.6"
+

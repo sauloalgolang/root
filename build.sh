@@ -2,6 +2,8 @@
 
 set -xeu
 
-DN=$(basename $PWD)
+MY_PATH=$(dirname "$0")              # relative
+MY_PATH=$( cd "${MY_PATH}" && pwd )
+source ${MY_PATH}/mount
 
-docker run -it --rm -v "$PWD":/go/src -w /go/src golang:1.6 go build -v $@
+${DOCKER_CMD} go build -v $@
