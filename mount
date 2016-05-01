@@ -9,6 +9,6 @@ DOCKER_CMD="docker run -it --rm \
 -v ${PWD}:${DST}/src            \
 -v ${PWD}/bin:${DST}/bin        \
 -v ${PWD}/pkg:${DST}/pkg        \
--w ${DST}                       \
+-w ${DST}/src                   \
 golang:1.6"
 
