@@ -15,4 +15,7 @@ fi
 
 ./install.sh github.com/sauloalgolang/fastareader/fastaindexer
 
-bin/fastareader ${FA}
+#bin/fastareader ${FA}
+
+./build_m.sh github.com/sauloalgolang/fastareader/fastareader/fastareader.go
+
