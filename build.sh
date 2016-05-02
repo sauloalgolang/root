@@ -6,6 +6,6 @@ MY_PATH=$(dirname "$0")              # relative
 MY_PATH=$( cd "${MY_PATH}" && pwd )
 source ${MY_PATH}/mount
 
-SHA=$(cd $(dirname $1) && git rev-parse --short HEAD)
+SHA=$((cd $(dirname $1) && (git rev-parse --short HEAD || echo "unset")) || echo "unset")
 
-${DOCKER_CMD} go build -v -ldflags "-X main.Build $SHA" $@
+${DOCKER_CMD} go build -v -ldflags "-X main.Build=$SHA" $@
