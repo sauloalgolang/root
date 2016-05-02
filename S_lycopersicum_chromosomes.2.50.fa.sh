@@ -9,11 +9,11 @@ if [[ ! -f "$FA" ]]; then
 	wget ${URL}/${FA}
 fi
 
-#./run.sh github.com/sauloalgolang/fastareader/fastareader/fastareader.go ${FA}
+#time ./run.sh github.com/sauloalgolang/fastareader/fastareader/fastareader.go ${FA}
 
-./install.sh github.com/sauloalgolang/fastareader/fastareader
+#./install.sh github.com/sauloalgolang/fastareader/fastareader
 
-./install.sh github.com/sauloalgolang/fastareader/fastaindexer
+#./install.sh github.com/sauloalgolang/fastareader/fastaindexer
 
 #bin/fastareader ${FA}
 
