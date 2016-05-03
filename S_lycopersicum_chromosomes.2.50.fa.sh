@@ -29,10 +29,10 @@ fi
 
 if [[ 1 == 1 ]]; then
 echo COMPILING KMEREXTRACTOR
-#time ./run.sh github.com/sauloalgolang/fastareader/kmerextractor/kmerextractor.go ${FA}
+time ./run.sh github.com/sauloalgolang/fastareader/kmerextractor/kmerextractor.go ${FA}
 #./install.sh  github.com/sauloalgolang/fastareader/kmerextractor/
-./build_m.sh  github.com/sauloalgolang/fastareader/kmerextractor/kmerextractor.go
-bin/kmerextractor ${FA}
+#./build_m.sh  github.com/sauloalgolang/fastareader/kmerextractor/kmerextractor.go
+#bin/kmerextractor ${FA}
 fi
 
 
