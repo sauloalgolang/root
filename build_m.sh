@@ -6,7 +6,7 @@ MY_PATH=$(dirname "$0")              # relative
 MY_PATH=$( cd "${MY_PATH}" && pwd )
 source ${MY_PATH}/mount
 
-mkdir -p builds || true
+mkdir -p builds &>/dev/null || true
 
 INGO=$1
 EXE=$(basename $INGO)

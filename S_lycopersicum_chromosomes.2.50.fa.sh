@@ -9,13 +9,31 @@ if [[ ! -f "$FA" ]]; then
 	wget ${URL}/${FA}
 fi
 
-time ./run.sh github.com/sauloalgolang/fastareader/fastareader/fastareader.go ${FA}
+if [[ 0 == 1 ]]; then
+echo COMPILING FASTAINDEXER
+time ./run.sh github.com/sauloalgolang/fastareader/fastaindexer/fastaindexer.go   ${FA}
+./install.sh  github.com/sauloalgolang/fastareader/fastaindexer/
+./build_m.sh  github.com/sauloalgolang/fastareader/fastaindexer/fastaindexer.go
+bin/fastaindexer ${FA}
+fi
 
-#./install.sh github.com/sauloalgolang/fastareader/fastareader
 
-#./install.sh github.com/sauloalgolang/fastareader/fastaindexer
+if [[ 0 == 1 ]]; then
+echo COMPILING FASTAREADER
+time ./run.sh github.com/sauloalgolang/fastareader/fastareader/fastareader.go     ${FA}
+./install.sh  github.com/sauloalgolang/fastareader/fastareader/
+./build_m.sh  github.com/sauloalgolang/fastareader/fastareader/fastareader.go
+bin/fastareader ${FA}
+fi
 
-#bin/fastareader ${FA}
 
-#./build_m.sh github.com/sauloalgolang/fastareader/fastareader/fastareader.go
+if [[ 1 == 1 ]]; then
+echo COMPILING KMEREXTRACTOR
+#time ./run.sh github.com/sauloalgolang/fastareader/kmerextractor/kmerextractor.go ${FA}
+#./install.sh  github.com/sauloalgolang/fastareader/kmerextractor/
+./build_m.sh  github.com/sauloalgolang/fastareader/kmerextractor/kmerextractor.go
+bin/kmerextractor ${FA}
+fi
+
+
 

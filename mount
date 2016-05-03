@@ -2,8 +2,8 @@ set -xeu
 
 DST=/go
 
-mkdir bin || true
-mkdir pkg || true
+mkdir bin &>/dev/null || true
+mkdir pkg &>/dev/null || true
 
 DOCKER_CMD="docker run -it --rm \
 -v ${PWD}:${DST}/src            \

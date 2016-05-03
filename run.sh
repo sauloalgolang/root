@@ -8,4 +8,4 @@ source ${MY_PATH}/mount
 
 SHA=$(cd $(dirname $1) && git rev-parse --short HEAD)
 
-${DOCKER_CMD} go run -ldflags "-X main.Build $SHA" -v $@
+${DOCKER_CMD} go run -ldflags "-X main.Build=$SHA" -v $@
